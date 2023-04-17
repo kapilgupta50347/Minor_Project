@@ -1,0 +1,29 @@
+#You need to press 'p', 'r', 's' multiple times for performing respective operations
+import time
+import keyboard
+mytime=int(input("Enter the time in seconds: "))
+x=mytime
+while x>=0:
+        if x==0:
+                print("time's up")
+                break
+        if x>0:
+                if x==mytime:
+                        print("timer started")
+                seconds=x%60
+                minutes=int(x/60)%60
+                hours=int(x/3600)
+                print(f"{hours:02}:{minutes:02}:{seconds:02}")
+                time.sleep(1)
+                x-=1
+        if(keyboard.is_pressed('r')):
+                x=mytime
+                print('press space to restart')
+                keyboard.wait(' ')
+        if(keyboard.is_pressed('s')):
+                print('timer stopped')
+                break
+        if(keyboard.is_pressed('p')):
+                print('press space to resume')
+                keyboard.wait(' ')
+print("KAPIL GUPTA")
